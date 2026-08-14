@@ -27,7 +27,7 @@ a { color: #A61E2E; } a:hover { color: #7E1522; }
 <div data-screen-label="Situations" style="padding: 24px 20px 28px;">
   <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
     <div>
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #7A7264; text-transform: uppercase;">Tue · Aug 4, 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #7A7264; text-transform: uppercase;">{{ dToday }}</div>
       <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 30px; margin: 6px 0 4px; line-height: 1.1;">Good morning, Juan</h1>
       <div style="font-size: 13.5px; color: #7A7264;">4 active situations · 2 need you today</div>
     </div>
@@ -83,13 +83,13 @@ a { color: #A61E2E; } a:hover { color: #7E1522; }
       <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; align-items: center;">
         <span style="background: #F1EBE0; border: 1px solid #E7E0D4; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 600;">Stage 2 · Sent</span>
         <span style="background: #F1EBE0; border: 1px solid #E7E0D4; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-family: 'IBM Plex Mono', monospace;">ES</span>
-        <span style="font-size: 12.5px; color: #7A7264;">Awaiting reply · check-in Aug 11</span>
+        <span style="font-size: 12.5px; color: #7A7264;">Awaiting reply · check-in {{ dCheckIn }}</span>
       </div>
     </div>
     <div onClick="{{ goRecord }}" style="background: #FFF; border: 1px solid #E7E0D4; border-radius: 12px; padding: 14px 16px; cursor: pointer; opacity: 0.85; box-shadow: 0 1px 3px rgba(60,45,25,0.05);" style-hover="box-shadow: 0 3px 10px rgba(60,45,25,0.10);">
       <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
         <div style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600;">Ana &amp; Luis Herrera</div>
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #1E7B4D;">Resolved Jul 28</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #1E7B4D;">Resolved {{ dResolved }}</div>
       </div>
       <div style="font-size: 12.5px; color: #7A7264; margin-top: 2px;">Holly Lane Apts, Burien</div>
       <div style="margin-top: 10px;">
@@ -144,7 +144,7 @@ a { color: #A61E2E; } a:hover { color: #7E1522; }
       </div>
       <div>
         <div style="font-size: 12.5px; font-weight: 600; margin-bottom: 5px;">Due date</div>
-        <div style="border: 1px solid #D8D0C0; border-radius: 8px; padding: 9px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; background: #FBF8F3;">Aug 1</div>
+        <div style="border: 1px solid #D8D0C0; border-radius: 8px; padding: 9px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; background: #FBF8F3;">{{ dRentDue }}</div>
       </div>
     </div>
     <div style="margin-top: 14px;">
@@ -241,7 +241,7 @@ Reply when you can, even if it's just to tell me you're okay.
           </select>
         </div>
         <div style="font-size: 11.5px; color: #A16207;">If posting: photo the posted notice for the record.</div>
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;"><span style="color: #7A7264;">Next check-in</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px;">Aug 11 · auto-remind</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;"><span style="color: #7A7264;">Next check-in</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px;">{{ dCheckIn }} · auto-remind</span></div>
       </div>
     </div>
     <div style="background: #FFF; border: 1px solid #E7E0D4; border-radius: 12px; padding: 16px 18px; margin-top: 12px;">
@@ -282,7 +282,7 @@ Reply when you can, even if it's just to tell me you're okay.
   <button onClick="{{ goDraftMaria }}" style="background: none; border: none; padding: 0; font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7A7264; cursor: pointer;">← Draft review</button>
   <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #7A7264; margin-top: 12px;">María González · Stage 2 · Day 9</div>
   <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 26px; margin: 4px 0 16px;">She replied — log it</h1>
-  <div style="font-size: 12px; color: #7A7264; margin-bottom: 8px;">Tenant reply · pasted Aug 9, 18:33</div>
+  <div style="font-size: 12px; color: #7A7264; margin-bottom: 8px;">Tenant reply · pasted {{ dPasted }}, 18:33</div>
   <div style="background: #201B16; color: #F5F1E8; border-radius: 18px 18px 18px 4px; padding: 14px 16px; font-size: 13.5px; line-height: 1.6;">Hola Sandra, perdón por no contestar antes. Me cortaron horas en el trabajo y ando viendo cómo juntar la renta. ¿Me puede dar hasta el 20? Gracias por preguntar cómo estoy.</div>
   <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
     <div style="background: #FBF3E4; border: 1px solid #EBDDBB; border-radius: 10px; padding: 11px 14px; display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px;"><span style="font-weight: 600; color: #A16207;">Hardship signal</span><span>Work hours cut</span></div>
@@ -291,8 +291,8 @@ Reply when you can, even if it's just to tell me you're okay.
   </div>
   <div style="background: #FFF; border: 1px solid #E7E0D4; border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 2px 8px rgba(60,45,25,0.06);">
     <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #7A7264;">Promise detected</div>
-    <div style="font-size: 14px; margin-top: 8px;">She proposed <strong style="font-family: 'IBM Plex Mono', monospace;">Aug 20</strong>. Log it?</div>
-    <button onClick="{{ goRecord }}" style="margin-top: 12px; background: #201B16; color: #FFF; border: none; border-radius: 999px; padding: 10px 16px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Log promise — follow-up auto-set Aug 21</button>
+    <div style="font-size: 14px; margin-top: 8px;">She proposed <strong style="font-family: 'IBM Plex Mono', monospace;">{{ dPromise }}</strong>. Log it?</div>
+    <button onClick="{{ goRecord }}" style="margin-top: 12px; background: #201B16; color: #FFF; border: none; border-radius: 999px; padding: 10px 16px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Log promise — follow-up auto-set {{ dFollowUp }}</button>
   </div>
   <div style="background: #FFF; border: 1px solid #E7E0D4; border-radius: 12px; padding: 16px 18px; margin-top: 12px;">
     <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #7A7264;">Payment · custody chain</div>
@@ -315,8 +315,8 @@ Reply when you can, even if it's just to tell me you're okay.
     </sc-if>
   </div>
   <div style="background: #FFF; border: 1px solid #E7E0D4; border-radius: 12px; padding: 16px 18px; margin-top: 12px; box-shadow: 0 2px 8px rgba(60,45,25,0.06);">
-    <div style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600;">Recommended next: written payment plan to Aug 20</div>
-    <p style="font-size: 13px; line-height: 1.6; color: #55503F; margin: 8px 0 0;">She engaged, named a cause, and committed to a date — that's the profile that pays. A short written plan makes Aug 20 a documented agreement instead of a hope, and it preserves the notice path if the date slips <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; background: #F1EBE0; border: 1px solid #D8D0C0; border-radius: 4px; padding: 1px 5px; white-space: nowrap;">RCW 59.12.030</span>. The decision is yours.</p>
+    <div style="font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600;">Recommended next: written payment plan to {{ dPromise }}</div>
+    <p style="font-size: 13px; line-height: 1.6; color: #55503F; margin: 8px 0 0;">She engaged, named a cause, and committed to a date — that's the profile that pays. A short written plan makes {{ dPromise }} a documented agreement instead of a hope, and it preserves the notice path if the date slips <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; background: #F1EBE0; border: 1px solid #D8D0C0; border-radius: 4px; padding: 1px 5px; white-space: nowrap;">RCW 59.12.030</span>. The decision is yours.</p>
     <button onClick="{{ goRecord }}" style="margin-top: 12px; background: #A61E2E; color: #FFF; border: none; border-radius: 999px; padding: 11px 18px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="background: #8C1626;">Draft the plan →</button>
   </div>
 </div>
@@ -351,12 +351,12 @@ Reply when you can, even if it's just to tell me you're okay.
       <div style="position: absolute; left: -24px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #1E7B4D;"></div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #7A7264;">AUG 09 · 18:33</div>
       <div style="font-size: 13.5px; font-weight: 600; margin-top: 2px;">Tenant replied — hardship: reduced hours</div>
-      <div style="font-size: 12.5px; color: #55503F;"><strong>Promise logged: Aug 20</strong></div>
+      <div style="font-size: 12.5px; color: #55503F;"><strong>Promise logged: {{ dPromise }}</strong></div>
     </div>
     <div style="position: relative;">
       <div style="position: absolute; left: -24px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: #A8A092;"></div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #7A7264;">AUG 09 · 18:41</div>
-      <div style="font-size: 13.5px; font-weight: 600; margin-top: 2px;">Next: written payment plan → Aug 20</div>
+      <div style="font-size: 13.5px; font-weight: 600; margin-top: 2px;">Next: written payment plan → {{ dPromise }}</div>
       <div style="font-size: 12.5px; color: #55503F;">notice path preserved <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; background: #F1EBE0; border: 1px solid #D8D0C0; border-radius: 4px; padding: 1px 5px; white-space: nowrap;">RCW 59.12.030</span></div>
     </div>
   </div>
@@ -629,6 +629,19 @@ Reply when you can, even if it's just to tell me you're okay.
       pay: 'promised', receipt: false,
     };
     go(screen, extra) { this.setState(Object.assign({ screen }, extra)); }
+    // Scenario dates are relative to "today" so the demo never reads as stale.
+    // Offsets preserve the original Aug 4, 2026 storyline spacing.
+    dateAt(offset) {
+      const d = new Date();
+      d.setHours(12, 0, 0, 0);
+      d.setDate(d.getDate() + offset);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+    todayLabel() {
+      const d = new Date();
+      return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
+        .replace(',', ' ·');
+    }
     pill(active) {
       return active
         ? { background: '#201B16', color: '#FFF', border: '1px solid #201B16', borderRadius: 999, padding: '7px 14px', fontFamily: "'Instrument Sans', sans-serif", fontSize: 12.5, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', lineHeight: 1.3 }
@@ -646,6 +659,10 @@ Reply when you can, even if it's just to tell me you're okay.
       const s = this.state;
       const blocked = !!(this.props && this.props.complianceBlocked);
       return {
+        dToday: this.todayLabel(),
+        dRentDue: this.dateAt(-3), dResolved: this.dateAt(-7),
+        dPasted: this.dateAt(5), dCheckIn: this.dateAt(7),
+        dPromise: this.dateAt(16), dFollowUp: this.dateAt(17),
         isHome: s.screen === 'home', isIntake: s.screen === 'intake', isDraft: s.screen === 'draft',
         isLog: s.screen === 'log', isRecord: s.screen === 'record', isEsc: s.screen === 'esc', isAccount: s.screen === 'account',
         draftIsMaria: s.situ === 'maria', draftIsMarcus: s.situ === 'marcus',
